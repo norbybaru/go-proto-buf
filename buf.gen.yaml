@@ -1,0 +1,8 @@
+# Documentation: https://docs.buf.build/configuration/v1/buf-gen-yaml
+version: v1
+plugins:
+  - out: gen/go
+    name: go # Synonym with: protoc-gen-<name>
+    opt: paths=source_relative
+  - out: gen/ruby
+    name: ruby
