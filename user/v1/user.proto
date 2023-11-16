@@ -5,7 +5,21 @@ package user.v1;
 option go_package = "github.com/norbybaru/go-proto-buf/gren/go/user/v1;userpb";
 
 message User {
-  string uuid      = 1;
-  string full_name = 2;
-  int64  birth_year = 3;
+  string           uuid          = 1;
+  string           full_name     = 2;
+  int64            birth_year    = 3;
+  optional int32   salary        = 4 [deprecated = true];
+  repeated Address address       = 5;
+  MaritalStatus    marital_staus = 6;
+}
+
+message Address {
+  string address = 1;
+  string city    = 2;
+}
+
+enum MaritalStatus {
+  MARITAL_STATUS_UNSPECIFIED = 0;
+  MARITAL_STATUS_SINGLE      = 1;
+  MARITAL_STATUS_MARRIED     = 2;
 }

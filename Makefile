@@ -5,8 +5,12 @@ help: ## Display this help.
 
 ##@ Development
 
+blint: buf-lint
+
 buf-lint: ## Proto code linter
 	@buf lint
+
+bgen: buf-gen
 
 buf-gen: ## Generarte protocol buffer code
 	@buf generate

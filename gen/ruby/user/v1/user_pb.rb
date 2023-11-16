@@ -5,7 +5,7 @@
 require 'google/protobuf'
 
 
-descriptor_data = "\n\x12user/v1/user.proto\x12\x07user.v1\"V\n\x04User\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x1b\n\tfull_name\x18\x02 \x01(\tR\x08\x66ullName\x12\x1d\n\nbirth_year\x18\x03 \x01(\x03R\tbirthYearB:Z8github.com/norbybaru/go-proto-buf/gren/go/user/v1;userpbb\x06proto3"
+descriptor_data = "\n\x12user/v1/user.proto\x12\x07user.v1\"\xeb\x01\n\x04User\x12\x12\n\x04uuid\x18\x01 \x01(\tR\x04uuid\x12\x1b\n\tfull_name\x18\x02 \x01(\tR\x08\x66ullName\x12\x1d\n\nbirth_year\x18\x03 \x01(\x03R\tbirthYear\x12\x1f\n\x06salary\x18\x04 \x01(\x05\x42\x02\x18\x01H\x00R\x06salary\x88\x01\x01\x12*\n\x07\x61\x64\x64ress\x18\x05 \x03(\x0b\x32\x10.user.v1.AddressR\x07\x61\x64\x64ress\x12;\n\rmarital_staus\x18\x06 \x01(\x0e\x32\x16.user.v1.MaritalStatusR\x0cmaritalStausB\t\n\x07_salary\"7\n\x07\x41\x64\x64ress\x12\x18\n\x07\x61\x64\x64ress\x18\x01 \x01(\tR\x07\x61\x64\x64ress\x12\x12\n\x04\x63ity\x18\x02 \x01(\tR\x04\x63ity*f\n\rMaritalStatus\x12\x1e\n\x1aMARITAL_STATUS_UNSPECIFIED\x10\x00\x12\x19\n\x15MARITAL_STATUS_SINGLE\x10\x01\x12\x1a\n\x16MARITAL_STATUS_MARRIED\x10\x02\x42:Z8github.com/norbybaru/go-proto-buf/gren/go/user/v1;userpbb\x06proto3"
 
 pool = Google::Protobuf::DescriptorPool.generated_pool
 
@@ -34,5 +34,7 @@ end
 module User
   module V1
     User = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("user.v1.User").msgclass
+    Address = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("user.v1.Address").msgclass
+    MaritalStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("user.v1.MaritalStatus").enummodule
   end
 end
