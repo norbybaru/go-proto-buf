@@ -1,27 +1,14 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"log"
 	"net"
 
 	userpb "github.com/norbybaru/go-proto-buf/gen/go/user/v1"
+	wearablepb "github.com/norbybaru/go-proto-buf/gen/go/wearable/v1"
 	"google.golang.org/grpc"
 )
-
-type UserService struct {
-	userpb.UnimplementedUserServiceServer
-}
-
-func (u *UserService) GetUser(_ context.Context, req *userpb.GetUserRequest) (*userpb.GetUserResponse, error) {
-	return &userpb.GetUserResponse{
-		User: &userpb.User{
-			Uuid:     "12345432",
-			FullName: req.FirstName + " " + req.LastName,
-		},
-	}, nil
-}
 
 func main() {
 	address := "127.0.0.1:9292"
@@ -32,7 +19,8 @@ func main() {
 	}
 
 	grpcServer := grpc.NewServer()
-	userpb.RegisterUserServiceServer(grpcServer, &UserService{})
+	userpb.RegisterUserServiceServer(grpcServer, &UserServer{})
+	wearablepb.RegisterWearableServiceServer(grpcServer, &WearableServer{})
 
 	fmt.Println("gRPC listening on", address)
 	grpcServer.Serve(lis)
