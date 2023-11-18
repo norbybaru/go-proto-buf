@@ -15,7 +15,9 @@ Install the following tools:
 * **required** `buf` CLI for linting and compiling:
     * `go install github.com/bufbuild/buf/cmd/buf@v1.28.0`
 * **required** Protocol Buffer Plugin for Go:
-    * `go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.27.1`
+    * `go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.1`
+* **required** gRPC Plugin for Go:
+    * `go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2`
 * **recommended** Code Formatting, `clang-format`, you can use `find . -name '*.proto' | xargs clang-format -i`
     * Homebrew: `brew install clang-format` (to date version `17.0.5`):
 
@@ -30,3 +32,7 @@ Initialize Buf
 ```bash
 buf mod init
 ```
+
+Resources
+- [Protocol Buffer](https://protobuf.dev/)
+- [gRPC](https://grpc.io/)
